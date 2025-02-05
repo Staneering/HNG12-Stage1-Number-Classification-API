@@ -62,7 +62,7 @@ app.get('/api/classify-number', async (req, res) => {
         });
     }
 
-    const num = parseInt(number, 10);
+    const num = Number(number);
 
     try {
         const funFactResponse = await axios.get(`http://numbersapi.com/${num}/math`);

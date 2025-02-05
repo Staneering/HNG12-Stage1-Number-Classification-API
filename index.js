@@ -36,7 +36,9 @@ const isArmstrong = (num) => {
 };
 
 const getDigitSum = (num) => {
-    return String(num).split('').reduce((acc, digit) => acc + Number(digit), 0);
+    const absNum = Math.abs(num);
+    const sum = String(absNum).split('').reduce((acc, digit) => acc + Number(digit), 0);
+    return num < 0 ? -sum : sum;
 };
 
 const getParity = (num) => {
@@ -53,9 +55,9 @@ app.get('/', (req, res) => {
 app.get('/api/classify-number', async (req, res) => {
     const number = req.query.number;
 
-    if (isNaN(number) || number === '') {
+    if (isNaN(number) || number === '' || !Number.isInteger(parseFloat(number))) {
         return res.status(400).json({
-            number: "alphabet",
+            number: number,
             error: true
         });
     }

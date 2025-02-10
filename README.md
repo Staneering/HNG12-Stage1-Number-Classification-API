@@ -43,8 +43,8 @@ The API is deployed at: [My Vercel Url](https://number-classification-task.verce
 
 ### Installation
 ```bash
-git clone https://github.com/Staneering/HNG12-Stage1-Number-Classification-API.git
-cd number-classification-task
+git clone https://github.com/Staneering/hngx-stage1-number-classification-api.git
+cd hngx-stage1-number-classification-api
 npm install
 ```
 
